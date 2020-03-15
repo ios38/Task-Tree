@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		50BB1E36241E38B4009DF83E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E35241E38B4009DF83E /* AppDelegate.swift */; };
 		50BB1E38241E38B4009DF83E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E37241E38B4009DF83E /* SceneDelegate.swift */; };
-		50BB1E3A241E38B4009DF83E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E39241E38B4009DF83E /* ViewController.swift */; };
 		50BB1E3D241E38B4009DF83E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB1E3B241E38B4009DF83E /* Main.storyboard */; };
 		50BB1E3F241E38B6009DF83E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50BB1E3E241E38B6009DF83E /* Assets.xcassets */; };
 		50BB1E42241E38B6009DF83E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB1E40241E38B6009DF83E /* LaunchScreen.storyboard */; };
+		50BB1E4C241E39DA009DF83E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E4B241E39DA009DF83E /* Task.swift */; };
+		50BB1E4E241E4BC9009DF83E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB1E4D241E4BC9009DF83E /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50BB1E32241E38B4009DF83E /* Task Tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Tree.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50BB1E35241E38B4009DF83E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50BB1E37241E38B4009DF83E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		50BB1E39241E38B4009DF83E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50BB1E3C241E38B4009DF83E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50BB1E3E241E38B6009DF83E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50BB1E41241E38B6009DF83E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50BB1E43241E38B6009DF83E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50BB1E4B241E39DA009DF83E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		50BB1E4D241E4BC9009DF83E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +58,14 @@
 		50BB1E34241E38B4009DF83E /* Task Tree */ = {
 			isa = PBXGroup;
 			children = (
+				50BB1E3B241E38B4009DF83E /* Main.storyboard */,
 				50BB1E35241E38B4009DF83E /* AppDelegate.swift */,
 				50BB1E37241E38B4009DF83E /* SceneDelegate.swift */,
-				50BB1E39241E38B4009DF83E /* ViewController.swift */,
-				50BB1E3B241E38B4009DF83E /* Main.storyboard */,
 				50BB1E3E241E38B6009DF83E /* Assets.xcassets */,
 				50BB1E40241E38B6009DF83E /* LaunchScreen.storyboard */,
 				50BB1E43241E38B6009DF83E /* Info.plist */,
+				50BB1E4B241E39DA009DF83E /* Task.swift */,
+				50BB1E4D241E4BC9009DF83E /* TableViewController.swift */,
 			);
 			path = "Task Tree";
 			sourceTree = "<group>";
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50BB1E3A241E38B4009DF83E /* ViewController.swift in Sources */,
+				50BB1E4C241E39DA009DF83E /* Task.swift in Sources */,
 				50BB1E36241E38B4009DF83E /* AppDelegate.swift in Sources */,
+				50BB1E4E241E4BC9009DF83E /* TableViewController.swift in Sources */,
 				50BB1E38241E38B4009DF83E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
