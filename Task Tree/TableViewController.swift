@@ -18,7 +18,11 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,6 +34,16 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = task.children[indexPath.row].name
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let ViewController = storyboard?.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController else { return }
+        
+        let child = task.children[indexPath.row]
+        ViewController.title = child.name
+        ViewController.task = child
+        navigationController?.pushViewController(ViewController, animated: true)
+    }
+    
     private func addTaskAlert() {
         let alert = UIAlertController(title: "Create new Task", message: nil, preferredStyle: .alert)
         alert.addTextField()
