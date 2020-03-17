@@ -78,6 +78,7 @@ dataParser.next = resultParser
 resultParser.next = arrayParser
 arrayParser.next = dataParser
 
-dataParser.parse(data3)
-resultParser.parse(data1)
-arrayParser.parse(data2)
+let jsonData = [data1, data2, data3]
+jsonData.forEach {
+    dataParser.parse($0)
+}
