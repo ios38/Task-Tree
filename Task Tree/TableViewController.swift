@@ -32,6 +32,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") else { preconditionFailure("AlbumsCell cannot be dequeued") }
         cell.textLabel?.text = task.children[indexPath.row].name
+        cell.detailTextLabel?.text = "Subtasks: " + String(task.children[indexPath.row].children.count)
         return cell
     }
     
