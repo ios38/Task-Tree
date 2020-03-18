@@ -15,12 +15,6 @@ struct User: Decodable {
     var name: String
     var age: Int
     var isDeveloper: Bool
-    /*
-    init(name: String, age: Int, isDeveloper: Bool) {
-        self.name = name
-        self.age = age
-        self.isDeveloper = isDeveloper
-    }*/
 }
 
 struct UserData​: Decodable {
@@ -33,39 +27,48 @@ struct UserResult: Decodable {
 
 protocol Parser {
     var next: Parser? { get set }
-    func parse(_ data: Data)
+    func parse(_ data: Data) -> [User]?
 }
 
 class DataParser: Parser {
     var next: Parser?
     
-    func parse(_ data: Data) {
+    func parse(_ data: Data) -> [User]? {
         if let users = try? JSONDecoder().decode(UserData​.self, from: data).data, users.count > 0 {
-            print("DataParser: parsing completed. Users count: \(users.count)")
+            print("Data parsing completed")
+            return users
         }
-        else { next?.parse(data) }
+        else {
+            return next?.parse(data)
+        }
     }
 }
 
 class ResultParser: Parser {
     var next: Parser?
     
-    func parse(_ data: Data) {
+    func parse(_ data: Data) -> [User]? {
         if let users = try? JSONDecoder().decode(UserResult.self, from: data).result, users.count > 0 {
-            print("ResultParser: parsing completed. Users count: \(users.count)")
+            print("Result parsing completed")
+            return users
         }
-        else { next?.parse(data) }
+        else {
+            return next?.parse(data)
+        }
     }
 }
 
 class ArrayParser: Parser {
     var next: Parser?
     
-    func parse(_ data: Data) {
+    func parse(_ data: Data) -> [User]? {
         if let users = try? JSONDecoder().decode([User].self, from: data), users.count > 0 {
-            print("ArrayParser: parsing completed. Users count: \(users.count)")
+            print("Array parsing completed")
+            return users
         }
-        else {  next?.parse(data) }
+        else {
+            return next?.parse(data)
+        }
     }
 }
 
@@ -80,5 +83,5 @@ arrayParser.next = dataParser
 
 let jsonData = [data1, data2, data3]
 jsonData.forEach {
-    dataParser.parse($0)
+    print("User count: \(dataParser.parse($0)?.count ?? 0) \n")
 }
